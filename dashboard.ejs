@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <title>Dashboard</title>
+</head>
+<body>
+
+<h1>Welcome <%= username %></h1>
+
+<form action="/post" method="POST">
+
+    <textarea name="content"></textarea>
+
+    <br><br>
+
+    <button type="submit">Post</button>
+
+</form>
+
+<hr>
+
+<h2>Posts</h2>
+
+<% posts.forEach(post => { %>
+
+    <h3><%= post.username %></h3>
+
+    <p><%= post.content %></p>
+
+    <hr>
+
+<% }) %>
+
+<form action="/upload" method="POST" enctype="multipart/form-data">
+
+    <input type="file" name="myfile">
+
+    <button type="submit">Upload</button>
+
+</form>
+
+</body>
+</html>
